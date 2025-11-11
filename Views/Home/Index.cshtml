@@ -1,0 +1,103 @@
+﻿@{
+    ViewData["Title"] = "Home";
+}
+
+<div class="task-container">
+    <!-- Hero Section -->
+    <div class="hero-section text-center mb-5">
+        <div class="hero-icon mb-3">
+            <i class="bi bi-check2-square"></i>
+        </div>
+        <h1 class="display-3 fw-bold mb-3" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+            Welcome to Taskaty
+        </h1>
+        <p class="lead text-muted mb-4">Your personal productivity companion. Organize, prioritize, and accomplish your goals.</p>
+        <div class="d-flex gap-3 justify-content-center">
+            <a asp-controller="Tasks" asp-action="Index" class="btn btn-primary-gradient btn-lg">
+                <i class="bi bi-list-check"></i> View My Tasks
+            </a>
+            <a asp-controller="Tasks" asp-action="Create" class="btn btn-outline-secondary btn-lg" style="border-radius: 10px; border-width: 2px;">
+                <i class="bi bi-plus-circle"></i> Create Task
+            </a>
+        </div>
+    </div>
+
+    <!-- Statistics Section -->
+    <div class="row g-4 mb-5">
+        <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <i class="bi bi-list-ul"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number">@ViewBag.TotalTasks</h3>
+                    <p class="stat-label">Total Tasks</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);">
+                    <i class="bi bi-hourglass-split"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number">@ViewBag.PendingTasks</h3>
+                    <p class="stat-label">Pending</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">
+                    <i class="bi bi-check-circle"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number">@ViewBag.CompletedTasks</h3>
+                    <p class="stat-label">Completed</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+            <div class="stat-card">
+                <div class="stat-icon" style="background: linear-gradient(135deg, #f56565 0%, #e53e3e 100%);">
+                    <i class="bi bi-exclamation-triangle"></i>
+                </div>
+                <div class="stat-content">
+                    <h3 class="stat-number">@ViewBag.OverdueTasks</h3>
+                    <p class="stat-label">Overdue</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features Section -->
+    <div class="row g-4">
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="bi bi-lightning-charge"></i>
+                </div>
+                <h4>Quick & Easy</h4>
+                <p class="text-muted">Create and manage tasks in seconds. Simple, intuitive interface designed for speed.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="bi bi-calendar-check"></i>
+                </div>
+                <h4>Track Deadlines</h4>
+                <p class="text-muted">Set due dates and get visual alerts for overdue tasks. Never miss a deadline again.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-card">
+                <div class="feature-icon">
+                    <i class="bi bi-graph-up"></i>
+                </div>
+                <h4>Track Progress</h4>
+                <p class="text-muted">Visualize your productivity with real-time statistics and completion tracking.</p>
+            </div>
+        </div>
+    </div>
+</div>
